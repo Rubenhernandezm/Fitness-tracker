@@ -107,8 +107,6 @@ Represents a single exercise execution and contains:
 
 
 
----
-
 
 
 # User Interface
