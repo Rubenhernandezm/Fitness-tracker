@@ -1,8 +1,8 @@
-\# Fitness Tracker (WPF)
+# Fitness Tracker (WPF)
 
 
 
-Desktop application developed in \*\*C# using WPF\*\* for tracking and visualizing physical exercise performance.
+Desktop application developed in **C# using WPF** for tracking and visualizing physical exercise performance.
 
 
 
@@ -10,15 +10,14 @@ The application allows users to manage exercises, register executions, and visua
 
 
 
-This project was developed for the course \*\*Interfaces Gráficas de Usuario\*\* in the \*\*Computer Engineering Degree at the University of Salamanca\*\*.
+This project was developed for the course **Interfaces Gráficas de Usuario** in the **Computer Engineering Degree at the University of Salamanca**.
 
 
 
----
 
 
 
-\# Author
+# Author
 
 
 
@@ -28,11 +27,10 @@ Computer Engineering Student – University of Salamanca
 
 
 
----
 
 
 
-\# Features
+# Features
 
 
 
@@ -54,21 +52,20 @@ The application allows users to:
 
 • Visualize execution history in tabular format  
 
-• Visualize exercise history using \*\*bar and line charts\*\*  
+• Visualize exercise history using **bar and line charts**  
 
-• Visualize repetitions per muscle group using a \*\*radial chart\*\*
-
-
-
-All visualizations are implemented using \*\*native WPF graphics\*\*, without external libraries.
+• Visualize repetitions per muscle group using a **radial chart**
 
 
 
----
+All visualizations are implemented using **native WPF graphics**, without external libraries.
 
 
 
-\# Application Architecture
+
+
+
+# Application Architecture
 
 
 
@@ -76,19 +73,19 @@ The application is structured around two main data models:
 
 
 
-\### Ejercicio
+### Ejercicio
 
 Represents a physical exercise and contains:
 
 
 
-\- Name
+- Name
 
-\- Description
+- Description
 
-\- Muscle groups
+- Muscle groups
 
-\- Collection of executions
+- Collection of executions
 
 
 
@@ -96,17 +93,17 @@ The executions are stored using an `ObservableCollection` which allows automatic
 
 
 
-\### Ejecucion
+### Ejecucion
 
 Represents a single exercise execution and contains:
 
 
 
-\- Repetitions
+- Repetitions
 
-\- Weight (kg)
+- Weight (kg)
 
-\- Date and time
+- Date and time
 
 
 
@@ -114,7 +111,7 @@ Represents a single exercise execution and contains:
 
 
 
-\# User Interface
+# User Interface
 
 
 
@@ -122,43 +119,43 @@ The application contains several windows:
 
 
 
-\### Main Window
+### Main Window
 
 Displays:
 
 
 
-\- Table with available exercises
+- Table with available exercises
 
-\- Radial chart showing repetitions per muscle group for a selected date
+- Radial chart showing repetitions per muscle group for a selected date
 
 
 
-\### Secondary Window
+### Secondary Window
 
 Displays detailed information for a selected exercise:
 
 
 
-\- Table of executions
+- Table of executions
 
-\- Graph showing historical exercise performance
-
-
-
-This window is \*\*non-modal\*\*, allowing interaction with the main window simultaneously.
+- Graph showing historical exercise performance
 
 
 
-\### Modal Windows
+This window is **non-modal**, allowing interaction with the main window simultaneously.
+
+
+
+### Modal Windows
 
 Used to:
 
 
 
-\- Add new exercises
+- Add new exercises
 
-\- Add new executions
+- Add new executions
 
 
 
@@ -166,11 +163,10 @@ Input validation is performed to prevent invalid data.
 
 
 
----
 
 
 
-\# Data Visualization
+# Data Visualization
 
 
 
@@ -178,7 +174,7 @@ Two types of charts are implemented:
 
 
 
-\### Exercise History Chart
+### Exercise History Chart
 
 
 
@@ -186,9 +182,9 @@ Shows:
 
 
 
-\- repetitions using \*\*bar charts\*\*
+- repetitions using **bar charts**
 
-\- weight using a \*\*line chart\*\*
+- weight using a **line chart**
 
 
 
@@ -196,11 +192,11 @@ Executions are grouped by date.
 
 
 
-\### Muscle Group Chart
+### Muscle Group Chart
 
 
 
-A \*\*radial visualization\*\* shows repetitions per muscle group for a specific date.
+A **radial visualization** shows repetitions per muscle group for a specific date.
 
 
 
@@ -208,31 +204,27 @@ The values are capped at 100 repetitions as specified in the assignment requirem
 
 
 
----
+
+
+# Technologies Used
 
 
 
-\# Technologies Used
+- C#
+
+- WPF
+
+- XAML
+
+- ObservableCollection
+
+- Event-based UI updates
 
 
 
-\- C#
-
-\- WPF
-
-\- XAML
-
-\- ObservableCollection
-
-\- Event-based UI updates
 
 
-
----
-
-
-
-\# Project Structure
+# Project Structure
 
 
 
@@ -246,11 +238,8 @@ images/ → screenshots of the application
 
 
 
----
 
-
-
-\# Documentation
+# Documentation
 
 
 
@@ -262,11 +251,8 @@ docs/informe.pdf
 
 
 
----
 
-
-
-\# Academic Context
+# Academic Context
 
 
 
