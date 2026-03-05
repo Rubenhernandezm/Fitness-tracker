@@ -1,0 +1,40 @@
+﻿<Window x:Class="EjercicioFísico.VentanaDetallesEjercicio"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EjercicioFísico"
+        mc:Ignorable="d"
+        Title="VentanaDetallesEjercicio" Height="400" Width="600" Icon="/Recursos/kilos.jpg">
+    <Grid Name="VentanaSecundaria">
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TabItem Header="Ejecuciones">
+                <Grid>
+                    <DataGrid Name="EjecucionesDataGrid"  AutoGenerateColumns="False" HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch" Margin="10" SelectionChanged="SeleccionEjecuciones" 
+                              CanUserAddRows="False" IsReadOnly="True">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Repeticiones" Binding="{Binding Repeticiones}"  Width="*"/>
+                            <DataGridTextColumn Header="Peso" Binding="{Binding Peso}" Width="*"/>
+                            <DataGridTextColumn Header="Fecha y Hora" Binding="{Binding Fecha}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                   
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10">
+                        <Button Content="Cerrar" Click="CerrarPestaña_Click" Margin="5" Width="80"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="10">
+                        <Button Content="Añadir" Click="AñadirEjecucion_Click" Margin="5" Width="80"/>
+                        <Button Content="Eliminar" Click="EliminarEjecucion_Click" Margin="5" Width="80"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Gráfico">
+                <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                    <Canvas x:Name="GraficoEjecuciones" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="White"
+                        Margin="10"/>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

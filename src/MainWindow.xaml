@@ -1,0 +1,75 @@
+﻿<Window x:Class="EjercicioFísico.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EjercicioFísico"
+        mc:Ignorable="d"
+        Title="IGU Fitness Tracker 2025" Height="500" Width="1115"
+        Icon="/Recursos/icono.jpg">
+
+    <Grid Name="VentanaPrincipal">
+        <!-- TabControl para las pestañas -->
+        <TabControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <!-- Primera pestaña de Ejercicios -->
+            <TabItem Header="Ejercicios">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="98*"/>
+                        <ColumnDefinition Width="1009*"/>
+                    </Grid.ColumnDefinitions>
+                    <!-- DataGrid para mostrar los ejercicios -->
+                    <DataGrid x:Name="EjerciciosDataGrid" AutoGenerateColumns="False" Margin="10,10,10,10" CanUserAddRows="False" 
+                              MouseDoubleClick="AbrirVentanaSecundaria" IsReadOnly="True" Grid.ColumnSpan="2">
+                        <!--Mediante el itemsSource podemos enlazar al datagrid la coleccion de ejercicios del DataContext-->
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" Width="*"/>
+                            <DataGridTextColumn Header="Descripción" Binding="{Binding Descripcion}" Width="2*"/>
+                            <DataGridTextColumn Header="Grupos Musculares" Binding="{Binding GruposMusculares}" Width="*"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <!-- Contenedor de botones en la parte inferior -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10,0,0,10" Grid.Column="0">
+                        <Button Content="Salir" Width="80" Margin="5" Click="SalirAplicacion_Click"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,10" Grid.Column="1">
+                        <Button Content="Añadir" Click="AñadirEjercicio_Click" Width="80" Margin="5"/>
+                        <Button Content="Modificar" Click="ModificarEjercicio_Click" Width="80" Margin="5"/>
+                        <Button Content="Eliminar" Click="EliminarEjercicio_Click" Width="80" Margin="5"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <!-- Segunda pestaña de Daily Insight -->
+            <TabItem Header="Daily Insight">
+                <Grid>
+                    <!-- Definir filas para los botones y el Canvas -->
+                    <Grid.RowDefinitions>
+                        <!-- Fila para botones -->
+                        <RowDefinition Height="Auto"/>
+                        <!-- Fila para el Canvas -->
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+
+                    <!-- Controles de navegación de fechas -->
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Grid.Row="0" Margin="10">
+                        <Button Content="Día anterior" Click="DiaAnterior_Click" Margin="5"/>
+                        <Button Content="Hoy" Click="Hoy_Click" Margin="5"/>
+                        <Button Content="Día siguiente" Click="DiaSiguiente_Click" Margin="5"/>
+                    </StackPanel>
+
+                    <!-- Canvas para el gráfico radial -->
+                    <Canvas x:Name="GraficoRadialCanvas" Background="LightGray" Grid.Row="1"
+        HorizontalAlignment="Center" VerticalAlignment="Center"
+        Width="400" Height="380">
+                      
+                    </Canvas>
+                    <TextBlock x:Name="FechaSeleccionadatxt" Text="Fecha seleccionada: --/--/----" FontSize="14" FontWeight="Bold" 
+                               Foreground="Black" HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="10"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+</Window>
